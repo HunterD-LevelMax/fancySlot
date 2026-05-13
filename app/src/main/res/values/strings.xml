@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">FancySlot</string>
+    <string name="spin">SPIN</string>
+    <string name="stop">STOP</string>
+    <string name="auto_spin">AUTO</string>
+    <string name="max_bet">MAX</string>
+    <string name="credits_label">CREDITS</string>
+    <string name="last_win_label">LAST WIN</string>
+    <string name="best_label">BEST</string>
+    <string name="bet_label">BET</string>
+    <string name="jackpot_label">JACKPOT!</string>
+    <string name="win_amount_prefix">+%1$d</string>
+    <string name="big_win_label">BIG WIN!</string>
+    <string name="jackpot">JACKPOT!</string>
+    <string name="big_win">BIG WIN!</string>
+    <string name="double_pair">DOUBLE PAIR!</string>
+    <string name="win">WIN!</string>
+</resources>
