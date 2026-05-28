@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FancySlot</string>
+    <string name="app_name">Slot precision</string>
     <string name="spin">SPIN</string>
     <string name="stop">STOP</string>
     <string name="auto_spin">AUTO</string>
@@ -15,4 +15,6 @@
     <string name="big_win">BIG WIN!</string>
     <string name="double_pair">DOUBLE PAIR!</string>
     <string name="win">WIN!</string>
+    <string name="loading_precision">Loading precision...</string>
+    <string name="win_history">WIN HISTORY</string>
 </resources>
