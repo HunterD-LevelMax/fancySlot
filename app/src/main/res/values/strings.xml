@@ -17,4 +17,9 @@
     <string name="win">WIN!</string>
     <string name="loading_precision">Loading precision...</string>
     <string name="win_history">WIN HISTORY</string>
+    <string name="balance">BALANCE</string>
+    <string name="bet">BET</string>
+    <string name="info">INFO</string>
+    <string name="best">BEST: %1$d</string>
+    <string name="paytable">PAYTABLE</string>
 </resources>

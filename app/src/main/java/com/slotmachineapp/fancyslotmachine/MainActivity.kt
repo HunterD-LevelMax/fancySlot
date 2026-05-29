@@ -399,7 +399,7 @@ private fun TopBar() {
         horizontalArrangement = Arrangement.Center
     ) {
         Text(
-            text = "CASINO PRECISION",
+            text = stringResource(R.string.app_name).uppercase(),
             color = Primary,
             fontSize = 20.sp,
             fontWeight = FontWeight.SemiBold,
@@ -420,10 +420,10 @@ private fun StatsBar(balance: Long, bet: Long, win: Long) {
         verticalAlignment = Alignment.CenterVertically
     ) {
         Row(horizontalArrangement = Arrangement.spacedBy(20.dp)) {
-            StatItem("BALANCE", balance.toString(), OnSurface)
-            StatItem("BET", bet.toString(), OnSurface)
+            StatItem(stringResource(R.string.balance), balance.toString(), OnSurface)
+            StatItem(stringResource(R.string.bet), bet.toString(), OnSurface)
         }
-        StatItem("WIN", win.toString(), Primary, alignEnd = true)
+        StatItem(stringResource(R.string.win), win.toString(), Primary, alignEnd = true)
     }
 }
 
@@ -621,7 +621,6 @@ private fun SlotReelColumn(
             }
         }
 
-        // Dim top and bottom rows to keep center row in focus.
         Box(
             modifier = Modifier
                 .fillMaxWidth()
@@ -694,7 +693,7 @@ private fun ControlPanel(
             .padding(horizontal = 16.dp, vertical = 14.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = "BET $currentBet", color = OnSurfaceVariant, fontSize = 14.sp, fontWeight = FontWeight.Medium)
+        Text(text = "${stringResource(R.string.bet)} $currentBet", color = OnSurfaceVariant, fontSize = 14.sp, fontWeight = FontWeight.Medium)
         Spacer(modifier = Modifier.height(10.dp))
 
         Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(14.dp)) {
@@ -741,7 +740,11 @@ private fun SpinButton(enabled: Boolean, onClick: () -> Unit, onLongClick: () ->
             .graphicsLayer { scaleX = scale; scaleY = scale }
             .clip(RoundedCornerShape(99.dp))
             .background(if (enabled) Primary else SurfaceHighest)
-            .shadow(if (enabled) 18.dp else 0.dp, RoundedCornerShape(99.dp), spotColor = Primary.copy(alpha = 0.35f))
+            .shadow(
+                if (enabled) 18.dp else 0.dp,
+                RoundedCornerShape(99.dp),
+                spotColor = Primary.copy(alpha = 0.35f)
+            )
             .combinedClickable(
                 enabled = enabled,
                 interactionSource = interactionSource,
@@ -787,10 +790,10 @@ private fun FooterBar(highScore: Long, onPaytableClick: () -> Unit) {
             .padding(horizontal = 16.dp, vertical = 8.dp),
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
-        Text("INFO", color = OnSurfaceVariant, fontSize = 12.sp)
-        Text("BEST: $highScore", color = Primary, fontSize = 12.sp, fontWeight = FontWeight.SemiBold)
+        Text(stringResource(R.string.info), color = OnSurfaceVariant, fontSize = 12.sp)
+        Text(stringResource(R.string.best, highScore), color = Primary, fontSize = 12.sp, fontWeight = FontWeight.SemiBold)
         Text(
-            "PAYTABLE",
+            stringResource(R.string.paytable),
             color = Primary,
             fontSize = 12.sp,
             fontWeight = FontWeight.SemiBold,
@@ -886,7 +889,9 @@ private fun MissionsStrip(totalSpins: Long, totalWinsCount: Long, highScore: Lon
         "BIG x500" to (highScore >= 500)
     )
     Row(
-        modifier = Modifier.fillMaxWidth().padding(horizontal = 12.dp),
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 12.dp),
         horizontalArrangement = Arrangement.spacedBy(8.dp, Alignment.CenterHorizontally)
     ) {
         missions.forEach { (title, done) ->
